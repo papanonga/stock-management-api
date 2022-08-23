@@ -1,1 +1,1 @@
-This is stock-management-api, use for management equipment
+This is stock-management-api, use for manage equipment
