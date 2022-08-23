@@ -1,0 +1,38 @@
+@base_url = http://localhost
+@port = 4800
+@url = {{base_url}}:{{port}}
+@equipment_api = {{url}}/equipments
+
+
+// get all
+GET {{equipment_api}} HTTP/1.1
+###
+
+// get by ID
+GET {{equipment_api}}/1 HTTP/1.1
+###
+
+
+// add equipment
+POST {{equipment_api}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "item_name": "Galaxy S22",
+    "category": "smartphone",
+    "brand": "Samsung",
+    "model": "ABC123",
+    "serial_number" : "SS112231" ,
+    "image": "",
+    "status": "stock",
+    "borrower": "",
+    "pv_number" : "",
+    "po_number": "",
+    "locate_at": "ACE"
+}
+###
+
+DELETE {{equipment_api}}/2 HTTP/1.1
+###
+// get by serial number
+GET {{equipment_api}}/sn/SS112231 HTTP/1.1

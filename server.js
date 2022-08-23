@@ -8,13 +8,12 @@ const env = process.env.NODE_ENV || "development"
 
 const server = express()
 server.use(express.json())
-
 //static image
 
 // routing
+server.use(require('./src/routes/routes'))
 
-
-server.listen( port, () => {
+server.listen(port, () => {
     console.log(`listening on port ${port}`)
     console.log(`environment : ${env}`)
     console.log(` Ctrl + C to quit`)
