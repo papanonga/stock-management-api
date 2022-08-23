@@ -1,5 +1,6 @@
 const equipmentsRepository = require('../repositories/equipment.repository')
 
+const historyService = require('./history.service')
 
 exports.findAll = async () => await equipmentsRepository.findAllEquipment()
 
