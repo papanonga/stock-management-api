@@ -22,12 +22,13 @@ Content-Type: application/json
     "category": "smartphone",
     "brand": "Samsung",
     "model": "ABC123",
-    "serial_number" : "SS112231" ,
-    "image": "",
+    "serial_number" : "CA01" ,
+    "image": "-",
+    "project_name": "XXX 101",
     "status": "stock",
-    "borrower": "",
-    "pv_number" : "",
-    "po_number": "",
+    "borrower": "-",
+    "pv_number" : "-",
+    "po_number": "-",
     "locate_at": "ACE"
 }
 ###
@@ -36,3 +37,25 @@ DELETE {{equipment_api}}/2 HTTP/1.1
 ###
 // get by serial number
 GET {{equipment_api}}/sn/SS112231 HTTP/1.1
+###
+
+
+// edit
+PUT {{equipment_api}}/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "item_name": "Galaxy Note33",
+    "category": "smartphone",
+    "brand": "Samsung",
+    "model": "ABC123",
+    "serial_number" : "CA01" ,
+    "image": "-",
+    "project_name": "BB 301",
+    "status": "stock",
+    "borrower": "Mr. Thossaporn Sukprasomjit",
+    "pv_number" : "-",
+    "po_number": "-",
+    "locate_at": "ACE"
+}
+###

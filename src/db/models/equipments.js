@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     image: DataTypes.STRING,
     status: DataTypes.STRING,
     borrower: DataTypes.STRING,
+    project_name: DataTypes.STRING,
     pv_number: DataTypes.STRING,
     po_number: DataTypes.STRING,
     locate_at: DataTypes.STRING

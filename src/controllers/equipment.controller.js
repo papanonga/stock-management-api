@@ -45,6 +45,7 @@ exports.addEquipment = async (req, res) => {
 exports.editEquipment = async (req, res) => {
     try {
         const result = await equipmentService.editEquipment(req.params.id, req.body)
+        console.log('req => ',req)
         if (result) {
             return res.status(201).json(result)
         }

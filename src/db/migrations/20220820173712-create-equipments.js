@@ -32,6 +32,9 @@ module.exports = {
       borrower: {
         type: Sequelize.STRING
       },
+      project_name: {
+        type: Sequelize.STRING
+      },
       pv_number: {
         type: Sequelize.STRING
       },
