@@ -45,7 +45,6 @@ exports.addEquipment = async (req, res) => {
 exports.editEquipment = async (req, res) => {
     try {
         const result = await equipmentService.editEquipment(req.params.id, req.body)
-        console.log('req => ',req)
         if (result) {
             return res.status(201).json(result)
         }
@@ -74,6 +73,20 @@ exports.findBySerialNumber = async (req, res) => {
         const result = await equipmentService.findBySerialNumber(req.params.id)
         if (result) {
             return res.status(200).json(result)
+        }
+        return res.status(404).json({ status: "Not found" })
+    } catch (error) {
+        console.error(error)
+        return res.status(500).json({ status: "error" })
+    }
+}
+
+exports.moveEquipment = async (req, res) => {
+    try {
+        const result = await equipmentService.moveEquipment(req.params.id, req.body)
+        console.log('req => ', req)
+        if (result) {
+            return res.status(201).json(result)
         }
         return res.status(404).json({ status: "Not found" })
     } catch (error) {

@@ -9,4 +9,5 @@ router.post('/', equipmentsController.addEquipment)
 router.put('/:id', equipmentsController.editEquipment)
 router.delete('/:id', equipmentsController.deleteEquipment)
 router.get('/sn/:id', equipmentsController.findBySerialNumber)
+router.put('/move/:id', equipmentsController.moveEquipment)
 module.exports = router;

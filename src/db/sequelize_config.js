@@ -4,20 +4,30 @@ dotenv.config()
 module.exports = {
     "development": {
         "storage": "./dev.sqlite3",
-        "dialect": "sqlite"
+        "dialect": "sqlite",
+       
+        
     },
     "test": {
-        "username": "root",
-        "password": null,
-        "database": "database_test",
-        "host": "127.0.0.1",
-        "dialect": "mysql"
+        "username": "cizdkfrc",
+        "password": "4NMgbGCsdpmG9Nb3cQHUVL7BJMXtFNDI",
+        "database": "cizdkfrc",
+        "host": "arjuna.db.elephantsql.com",
+        "dialect": "postgres"
     },
     "production": {
-        "username": "root",
-        "password": null,
-        "database": "database_production",
-        "host": "127.0.0.1",
-        "dialect": "mysql"
+        "username": "airconkg",
+        "password": "P12wn34mmh@",
+        "database": "stock_application",
+        "host": "43.229.149.254:5432",
+        "dialect": "postgres"
     }
 }
+// localhost:5432
+
+
+
+
+
+        // "storage": "./dev.sqlite3",
+        // "dialect": "sqlite"

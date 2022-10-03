@@ -3,7 +3,7 @@ const db = require('../db/models')
 
 exports.findAllEquipment = async () => await db.Equipments.findAll({
     order: [
-        ['id', 'DESC']
+        ['id', 'ASC']
     ]
 })
 
