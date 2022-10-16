@@ -3,10 +3,11 @@ dotenv.config()
 
 module.exports = {
     "development": {
-        "storage": "./dev.sqlite3",
-        "dialect": "sqlite",
-       
-        
+        "username": "p12wn34",
+        "password": "p12wn34mmh",
+        "database": "demo_stock",
+        "host": "43.229.149.254",
+        "dialect": "mariadb"
     },
     "test": {
         "username": "cizdkfrc",
@@ -19,14 +20,16 @@ module.exports = {
         "username": "airconkg",
         "password": "P12wn34mmh@",
         "database": "stock_application",
-        "host": "43.229.149.254:5432",
+        "host": "43.229.149.254",
         "dialect": "postgres"
     }
 }
 // localhost:5432
 
-
-
+// "development": {
+//     "storage": "./dev.sqlite3",
+//     "dialect": "sqlite",
+// }
 
 
         // "storage": "./dev.sqlite3",

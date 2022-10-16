@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     locate_at: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Equipments',
+    modelName: 'equipments',
     underscored: true,
     freezeTableName: true,
     underscoreAll: true,

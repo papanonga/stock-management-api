@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     status_equipment_back: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'History',
+    modelName: 'history',
     underscored: true,
     freezeTableName: true,
     underscoreAll: true,
