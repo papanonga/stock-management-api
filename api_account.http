@@ -26,7 +26,7 @@ Authorization: {{token}}
 ###
 
 // get by ID
-GET {{equipment_api}}/1 HTTP/1.1
+GET {{equipment_api}}/4 HTTP/1.1
 Authorization: {{token}}
 
 ###

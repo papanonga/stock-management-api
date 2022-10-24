@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   History.init({
     project_name: DataTypes.STRING,
-    equipment_sn: DataTypes.STRING,
+    serial_number: DataTypes.STRING,
     borrower: DataTypes.STRING,
     borrower_date: DataTypes.DATE,
     back_to_store_date: DataTypes.DATE,

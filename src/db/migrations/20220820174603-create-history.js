@@ -11,7 +11,7 @@ module.exports = {
       project_name: {
         type: Sequelize.STRING
       },
-      equipment_sn: {
+      serial_number: {
         type: Sequelize.STRING
       },
       borrower: {

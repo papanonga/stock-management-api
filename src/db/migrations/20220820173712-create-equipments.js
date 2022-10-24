@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       serial_number: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       image: {
         type: Sequelize.STRING

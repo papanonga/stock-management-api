@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     category: DataTypes.STRING,
     brand: DataTypes.STRING,
     model: DataTypes.STRING,
-    serial_number: DataTypes.INTEGER,
+    serial_number: DataTypes.STRING,
     image: DataTypes.STRING,
     status: DataTypes.STRING,
     borrower: DataTypes.STRING,
