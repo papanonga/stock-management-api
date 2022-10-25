@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  };
+  }
   History.init({
     project_name: DataTypes.STRING,
     serial_number: DataTypes.STRING,

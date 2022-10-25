@@ -1,7 +1,16 @@
 
 ### Table Equipments
-sequelize model:generate --name Equipments --attributes "item_name:string, category:string, brand:string, model:string, serial_number:integer, image:string, status:string, borrower:string, project_name:string ,pv_number:string, po_number:string, locate_at:string" --underscored true
+sequelize model:generate --name Equipments --attributes "item_name:string, category:string, brand:string, model:string, serial_number:string, image:string, status:string, borrower:string, project_name:string ,pv_number:string, po_number:string, locate_at:string" --underscored true
 
 
 ### Table History
 sequelize model:generate --name History --attributes "project_name:string, equipment_sn:string, borrower:string, borrower_date:date, back_to_store_date:date, status_equipment_back:string" --underscored true
+
+
+
+### Table equipments
+sequelize model:generate --name equipments --attributes "item_name:string, category:string, brand:string, model:string, serial_number:string, image:string, status:string, borrower:string, project_name:string ,pv_number:string, po_number:string, locate_at:string" --underscored true
+
+
+### Table history
+sequelize model:generate --name history --attributes "project_name:string, equipment_sn:string, borrower:string, borrower_date:date, back_to_store_date:date, status_equipment_back:string" --underscored true --freezeTableName true

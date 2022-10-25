@@ -17,7 +17,7 @@ exports.addEquipment = async equipment => {
         const dateNow = new Date()
         await historyService.writeHistory({
             project_name,
-            equipment_sn: serial_number,
+            serial_number,
             borrower: borrower ? borrower : "-",
             borrow_date: borrower ? getBangkokTime() : "-",
             back_to_store_date: getBangkokTime(),
@@ -38,7 +38,7 @@ exports.editEquipment = async (id, equipment) => {
         const { project_name, serial_number, borrower, status } = updatedEquipment.dataValues
         await historyService.writeHistory({
             project_name,
-            equipment_sn: serial_number,
+            serial_number,
             borrower: borrower ? borrower : "-",
             borrower_date: borrower ? getBangkokTime() : "-",
             back_to_store_date: getBangkokTime(),
@@ -72,7 +72,7 @@ exports.moveEquipment = async (id, equipment) => {
         const { project_name, serial_number, borrower, status } = updatedEquipment.dataValues
         await historyService.writeHistory({
             project_name,
-            equipment_sn: serial_number,
+            serial_number,
             borrower: borrower ? borrower : "-",
             borrower_date: borrower ? getBangkokTime() : "-",
             back_to_store_date: getBangkokTime(),

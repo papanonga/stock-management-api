@@ -1,45 +1,29 @@
 const historyDatabase = require('../db/models')
-
-
-// historyDatabase.history.hasOne(
-//     historyDatabase.equipments,
-//     {
-//         foreignKey: { name: 'serial_number', field: 'serial_number' },
-//     }
-// );
-// historyDatabase.equipments.belongsTo(historyDatabase.history, { foreignKey: 'serial_number' });
-
-
-// historyDatabase.equipments.hasMany(historyDatabase.history, {
-//     foreignKey: { name: 'serial_number', field: 'serial_number' }
-// })
-// historyDatabase.history.belongsTo(historyDatabase.equipments, { foreignKey: 'serial_number' })
-
-
-
+const sequelize = require('sequelize')
 
 historyDatabase.history.hasOne(historyDatabase.equipments,
     {
-        foreignKey: { name: 'serial_number', field: 'serial_number'}
+        foreignKey: 'serial_number',
+        sourceKey: 'serial_number'
     }
 )
+historyDatabase.equipments.belongsTo(historyDatabase.history,
+    {
+        foreignKey: 'serial_number',
+        // targetKey: 'id'
+    })
 
-historyDatabase.equipments.belongsTo(historyDatabase.history, { foreignKey: 'serial_number'})
-
-// include: {
-//     model : historyDatabase.equipments
-// }
-
-
-// exports.getAllTransaction = async () => await historyDatabase.history.findAll({
-//     include: {
-//         model: historyDatabase.equipments
-//     }
-    
-// })
+exports.getAllTransaction = async () => await historyDatabase.history.findAll({
+    include: [{
+        model: historyDatabase.equipments,
+        attributes: ['id', 'serial_number', 'item_name'],
+        required: false
+    }],
+    order: [sequelize.col('id', 'DESC')]
+})
 
 
-exports.getAllTransaction = async () => await historyDatabase.history.findAll()
+// exports.getAllTransaction = async () => await historyDatabase.history.findAll()
 
 exports.getBySerialNumber = async serial_number => await historyDatabase.history.findAll({
     where: {
