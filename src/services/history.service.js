@@ -7,3 +7,5 @@ exports.getByProjectName = async project_name => await historyRepository.getByPr
 exports.getByEquipmentSerialNumber = async serial_number => await historyRepository.getBySerialNumber(serial_number)
 
 exports.getAll = async () => await historyRepository.getAllTransaction()
+
+exports.delete = async (serial_number) => await historyRepository.delete(serial_number)

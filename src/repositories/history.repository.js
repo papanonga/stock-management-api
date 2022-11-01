@@ -40,3 +40,9 @@ exports.getByProject = async project_name => await historyDatabase.history.findA
 
 
 exports.writeHistory = async data => await historyDatabase.history.create(data)
+
+exports.delete = async serial_number => await historyDatabase.history.destroy({
+    where: {
+        serial_number
+    }
+})

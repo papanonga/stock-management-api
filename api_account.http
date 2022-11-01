@@ -26,7 +26,13 @@ Authorization: {{token}}
 ###
 
 // get by ID
-GET {{equipment_api}}/4 HTTP/1.1
+GET {{equipment_api}}/15 HTTP/1.1
+Authorization: {{token}}
+
+###
+
+// delete by ID
+DELETE  {{equipment_api}}/12 HTTP/1.1
 Authorization: {{token}}
 
 ###

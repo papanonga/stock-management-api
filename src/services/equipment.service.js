@@ -53,8 +53,10 @@ exports.editEquipment = async (id, equipment) => {
 
 exports.deleteEquipment = async id => {
     const isEquipmentInStock = await equipmentsRepository.findByID(id)
+    const { serial_number } = isEquipmentInStock.dataValues
     if (isEquipmentInStock) {
-        return await equipmentsRepository.deleteEquipment(id)
+        await historyService.delete(serial_number)
+        return await equipmentsRepository.deleteEquipment(id) 
     }
     return
 }
@@ -76,7 +78,7 @@ exports.moveEquipment = async (id, equipment) => {
             borrower: borrower ? borrower : "-",
             borrower_date: borrower ? getBangkokTime() : "-",
             back_to_store_date: getBangkokTime(),
-            status_equipment_back:status
+            status_equipment_back: status
         })
         return result
     }
