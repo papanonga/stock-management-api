@@ -13,4 +13,11 @@ sequelize model:generate --name equipments --attributes "item_name:string, categ
 
 
 ### Table history
-sequelize model:generate --name history --attributes "project_name:string, equipment_sn:string, borrower:string, borrower_date:date, back_to_store_date:date, status_equipment_back:string" --underscored true --freezeTableName true
+sequelize model:generate --name history --attributes "project_name:string, equipment_sn:string, borrower:string, borrower_date:date, back_to_store_date:date, status_equipment_back:string" --underscored true 
+
+
+### Table project
+sequelize model:generate --name projects --attributes "project_name:string, project_code:string"  --underscored true 
+
+### Table borrowers
+sequelize model:generate --name borrowers --attributes "name:string, surname:string" --underscored true

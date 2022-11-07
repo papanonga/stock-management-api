@@ -13,10 +13,16 @@ historyDatabase.equipments.belongsTo(historyDatabase.history,
         // targetKey: 'id'
     })
 
+
+
+exports.getWithBorrowerAndEquipmentDetail = async () => await historyDatabase.history.findAll({})
+
+
+
 exports.getAllTransaction = async () => await historyDatabase.history.findAll({
     include: [{
         model: historyDatabase.equipments,
-        attributes: ['id', 'serial_number', 'item_name'],
+        attributes: ['id', 'serial_number', 'item_name', 'category', 'brand', 'model'],
         required: false
     }],
     order: [sequelize.col('id', 'DESC')]
