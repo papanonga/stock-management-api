@@ -34,16 +34,16 @@ exports.editEquipment = async (id, equipment) => {
     console.log("Equipment service => ", equipment)
     if (isEquipmentInStock) {
         const result = await equipmentsRepository.updateEquipmentDetail(id, equipment)
-        const updatedEquipment = await equipmentsRepository.findByID(id)
-        const { project_name, serial_number, borrower, status } = updatedEquipment.dataValues
-        await historyService.writeHistory({
-            project_name,
-            serial_number,
-            borrower: borrower ? borrower : "-",
-            borrower_date: borrower ? getBangkokTime() : "-",
-            back_to_store_date: getBangkokTime(),
-            status_equipment_back: status
-        })
+        // const updatedEquipment = await equipmentsRepository.findByID(id)
+        // const { project_name, serial_number, borrower, status } = updatedEquipment.dataValues
+        // await historyService.writeHistory({
+        //     project_name,
+        //     serial_number,
+        //     borrower: borrower ? borrower : "-",
+        //     borrower_date: borrower ? getBangkokTime() : "-",
+        //     back_to_store_date: getBangkokTime(),
+        //     status_equipment_back: status
+        // })
         return result
     }
     return
