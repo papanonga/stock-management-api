@@ -2,7 +2,7 @@ const borrowersService = require('../services/borrowers.service')
 
 exports.addBorrower = async (req, res) => {
     try {
-        const isAddBorrower = await borrowersService.addBorrower(req.body)
+        const isAddBorrower = await borrowersService.add(req.body)
         if (isAddBorrower) {
             return res.status(200).json({ status: "Already Add" })
         }

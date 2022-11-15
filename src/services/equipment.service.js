@@ -11,22 +11,23 @@ exports.findAll = async () => await equipmentsRepository.findAllEquipment()
 exports.findByID = async id => await equipmentsRepository.findByID(id)
 
 exports.addEquipment = async equipment => {
-    const alreadyAdd = await equipmentsRepository.addEquipment(equipment)
-    if (alreadyAdd) {
-        const { project_name, serial_number, borrower } = alreadyAdd.dataValues
-        const dateNow = new Date()
-        await historyService.writeHistory({
-            project_name,
-            serial_number,
-            borrower: borrower ? borrower : "-",
-            borrow_date: borrower ? getBangkokTime() : "-",
-            back_to_store_date: getBangkokTime(),
-            status_equipment_back: "stock"
+    return equipmentsRepository.addEquipment(equipment)
+    // const alreadyAdd = await equipmentsRepository.addEquipment(equipment)
+    // if (alreadyAdd) {
+    //     const { project_name, serial_number, borrower } = alreadyAdd.dataValues
+    //     const dateNow = new Date()
+    //     await historyService.writeHistory({
+    //         project_name,
+    //         serial_number,
+    //         borrower: borrower ? borrower : "-",
+    //         borrow_date: borrower ? getBangkokTime() : "-",
+    //         back_to_store_date: getBangkokTime(),
+    //         status_equipment_back: "stock"
 
-        })
-        console.log("already add result => ", alreadyAdd?.dataValues)
-        return alreadyAdd
-    }
+    //     })
+    //     console.log("already add result => ", alreadyAdd?.dataValues)
+    //     return alreadyAdd
+    // }
 }
 
 exports.editEquipment = async (id, equipment) => {

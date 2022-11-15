@@ -1,0 +1,68 @@
+@base_url = http://localhost
+@port = 4800
+@url = {{base_url}}:{{port}}
+@borrower_api = {{url}}/borrower
+@account_api = {{url}}/account
+
+@token = Bearer {{login.response.body.token}}
+
+// get all borrower
+GET {{borrower_api}} HTTP/1.1
+Authorization: {{token}}
+###
+
+// get borrower_api by ID
+GET {{borrower_api}}/1 HTTP/1.1
+Authorization: {{token}}
+###
+
+
+// add borrower
+POST {{borrower_api}} HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+    "name": "Anyalyn",
+    "surname": "Kasikasi"
+}
+###
+
+DELETE {{borrower_api}}/2 HTTP/1.1
+Authorization: {{token}}
+###
+// get by serial number
+
+
+// edit
+PUT {{borrower_api}}/1 HTTP/1.1
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+    "name": "Anyalyn",
+    "surname": "Kasikasi"
+}
+###
+
+###
+// register
+POST {{account_api}}/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username" : "admin",
+    "password" : "1234"
+}
+###
+
+# @name login
+//login
+POST {{account_api}}/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username" : "admin",
+    "password" : "1234"
+}
+###
